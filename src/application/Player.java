@@ -7,7 +7,7 @@ import application.PlayerData;
 public class Player {
 	//customer's properties
 	
-	private String playerID,firstName, lastName, address, city, province, postalCode;
+	private String playerID,firstName, lastName, address, phoneNumber, province, postalCode;
 	String record[] = new String[7]; //holds the data for the current record
 	private PlayerData playerData = null;
 	
@@ -21,20 +21,22 @@ public class Player {
 		firstName=record[1];
 		lastName = record[2];
 		address=record[3];
-		city=record[4];
+		postalCode=record[4];
 		province = record[5];
-		postalCode=record[6];
+		phoneNumber=record[6];
+		
+		
 	}
 	// 7-argument constructor
-	public Player(String playerID, String firstName,String lastname, String address, String city, String province, String postalCode)
+	public Player(String playerID, String firstName,String lastname, String address, String phoneNumber, String province, String postalCode)
 	{
 		 this.playerID=playerID;
 		 this.firstName=firstName;
-		 this.lastName=firstName;
+		 this.lastName=lastName;
 		 this.address=address;
-		 this.city=city;
-		 this.province=province;
 		 this.postalCode=postalCode;
+		 this.province=province;
+		 this.phoneNumber=phoneNumber;
 	}
 	//setter and getter methods
 	public String getPlayerID()
@@ -53,9 +55,9 @@ public class Player {
 	{
 		return address;
 	}
-	public String getCity()
+	public String getPhoneNumber()
 	{
-		return city;
+		return phoneNumber;
 	}
 	public String getProvince()
 	{
@@ -77,9 +79,9 @@ public class Player {
 	{
 		this.address=address;
 	}
-	public void setCity(String city)
+	public void setPhoneNumber(String phoneNumber)
 	{
-		this.city=city;
+		this.phoneNumber=phoneNumber;
 	}
 	public void setProvince(String province)
 	{
@@ -139,9 +141,11 @@ public class Player {
 		 this.firstName=data[1];
 		 this.lastName=data[2];
 		 this.address=data[3];
-		 this.city=data[4];
+		 this.postalCode=data[4];
 		 this.province=data[5];
-		 this.postalCode=data[6];
+		 this.phoneNumber=data[6];
+		 
+		 
 	}
 
 } // end of Player

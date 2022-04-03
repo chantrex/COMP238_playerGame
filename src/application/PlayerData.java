@@ -139,7 +139,7 @@ public void saveRow(String record[])
 {
 
     try {
-	    	pst = connection.prepareStatement("insert into player (playerID, firstName, lastName, address, city, province, postalCode) VALUES(?,?,?,?,?,?,?)");
+	    	pst = connection.prepareStatement("insert into player (playerID, firstName, lastName, address, postalCode, province, phoneNumber ) VALUES(?,?,?,?,?,?,?)");
 
           /** The following works when the driver supports insertRow method
           rs.moveToInsertRow();
@@ -177,7 +177,7 @@ public void updateRow(String record[])
           //
         	//this code updates the row using a prepared statement
           updateSt = connection.prepareStatement(
-          		"Update player set firstname = ?, lastname = ?,address = ?,city = ?, province = ?,postalCode = ? where playerid = ?");
+          		"Update player set firstname = ?, lastname = ?,address = ?,postalCode = ?,province = ?, phoneNumber = ?, , where playerid = ?");
           //set values for all parameters excluding playerid
   	  	for(int i=2; i<= nCols; i++)
           {

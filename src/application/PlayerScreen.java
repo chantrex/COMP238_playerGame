@@ -10,8 +10,11 @@ class PlayerScreen extends JFrame {
 	private Player player;
 	JLabel lbl[]=new JLabel[7];
 	String lblNames[]= {"Player ID:","First Name","Last Name:","Address:",
-						"City:","Province:","Postal Code:"};
-	int txtWidths[]={9,20,20,20,20,2,6};
+						"Postal Code:",
+						"Province:",
+						"Phone Number:",
+						};
+	int txtWidths[]={9,15,15,15,15,2,10};
 	  
 	//data access buttons
 	JButton btn[]=new JButton[4];
@@ -31,7 +34,7 @@ class PlayerScreen extends JFrame {
 		//
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
-		this.setSize(500, 300);
+		this.setSize(300, 200);
 		this.setTitle("Player Information");
 		//	Set the GridBagLayout for the frame
 		screen = new JPanel();
@@ -42,9 +45,9 @@ class PlayerScreen extends JFrame {
 		for(int i = 0; i<lbl.length;i++)
 		{
 			lbl[i] = new JLabel(lblNames[i]);
-			lbl[i].setFont(new Font("Arial", Font.BOLD, 24));
+			lbl[i].setFont(new Font("Arial", Font.BOLD, 14));
 			txt[i]=new JTextField(txtWidths[i]);
-			txt[i].setFont(new Font("Arial", Font.BOLD, 24));
+			txt[i].setFont(new Font("Arial", Font.BOLD, 14));
 			//add labels 
 			constraints = new GridBagConstraints();
 			addComponent(lbl[i], i, 0, 1, 1,
@@ -59,7 +62,7 @@ class PlayerScreen extends JFrame {
 		for(int i = 0; i<btn.length;i++)
 		{
 			btn[i] = new JButton(btnNames[i]);
-			btn[i].setFont(new Font("Arial", Font.BOLD, 24));
+			btn[i].setFont(new Font("Arial", Font.BOLD, 14));
 			
 			addComponent(btn[i], i, 2, 1, 1,
 					GridBagConstraints.HORIZONTAL,
@@ -72,7 +75,7 @@ class PlayerScreen extends JFrame {
 		for(int i = 0; i<nav.length;i++)
 		{
 			nav[i] = new JButton(navNames[i]);
-			nav[i].setFont(new Font("Arial", Font.BOLD, 24));
+			nav[i].setFont(new Font("Arial", Font.BOLD, 14));
 		
 			pSouth.add(nav[i]);
 			nav[i].addActionListener(new NavigatorHandler());
@@ -142,11 +145,17 @@ class PlayerScreen extends JFrame {
 		txt[2].setText(player.getLastName());
 		
 		txt[3].setText(player.getAddress());
-		txt[4].setText(player.getCity());
+		txt[4].setText(player.getPostalCode());
 		txt[5].setText(player.getProvince());
-		txt[6].setText(player.getPostalCode());
+		txt[6].setText(player.getPhoneNumber());
+		
 	}
 	//    
+
+	
+	
+	
+	
 	class ButtonHandler implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
@@ -231,7 +240,7 @@ class PlayerScreen extends JFrame {
 	//  
 	public static void main(String[] args) {
 		PlayerScreen frame = new PlayerScreen();
-		frame.setFont(new Font("Arial", Font.BOLD, 24));
+		frame.setFont(new Font("Arial", Font.BOLD, 14));
 		//Validate frames that have preset sizes
 		//Pack frames that have useful preferred size info, e.g. from their layout
 		
