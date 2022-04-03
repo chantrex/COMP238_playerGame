@@ -34,7 +34,7 @@ class PlayerScreen extends JFrame {
 		//
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
-		this.setSize(300, 200);
+		this.setSize(500, 400);
 		this.setTitle("Player Information");
 		//	Set the GridBagLayout for the frame
 		screen = new JPanel();
@@ -116,8 +116,8 @@ class PlayerScreen extends JFrame {
 	      int row, int column, int width, int height, int fill,
 	      int anchor, Insets insets)
 	{
-		constraints.gridx = column; // set gridx
-	    constraints.gridy = row; // set gridy
+		constraints.gridx = column +2 ; // set gridx
+	    constraints.gridy = row +3 ; // set gridy
 	    constraints.gridwidth = width; // set gridwidth
 	    constraints.gridheight = height; // set gridheight
 	    constraints.fill = fill; //specify the fill
@@ -253,7 +253,7 @@ class PlayerScreen extends JFrame {
 		if (frameSize.width > screenSize.width) {
 			frameSize.width = screenSize.width;
 		}
-		frame.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
+		frame.setLocation((screenSize.width - frameSize.width) / 3, (screenSize.height - frameSize.height) / 3);
 		frame.setVisible(true);
 	  	
 	}
